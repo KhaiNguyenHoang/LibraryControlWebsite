@@ -2,7 +2,7 @@ using LibaryControlWebsite.Models.Responsibility;
 
 namespace LibaryControlWebsite.Models.Service;
 
-public class BookcopyService : IBookService
+public class BookcopyService : IBookcopyService
 {
     
 }
