@@ -12,23 +12,65 @@ public class UserService : IUserService
         _context = context;
     }
 
-    public async Task<User?> Login(int userId, string password)
+    public async Task<User?> Login(string email, string password)
     {
-        var userToLogin = await GetUser(userId);
-        if (userToLogin != null && BCrypt.Net.BCrypt.Verify(password, userToLogin.PasswordHash))
+        // Tìm người dùng theo email
+        var userToLogin = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+    
+        if (userToLogin == null)
         {
-            return userToLogin;
+            Console.WriteLine("Login failed: Email not found.");
+            return null;
         }
-        return null;
+
+        // Kiểm tra mật khẩu
+        if (!BCrypt.Net.BCrypt.Verify(password, userToLogin.PasswordHash))
+        {
+            Console.WriteLine("Login failed: Incorrect password.");
+            return null;
+        }
+
+        Console.WriteLine($"Login successful: {userToLogin.FullName}");
+        return userToLogin;
     }
 
-    public async Task<User> Register(User user)
+
+    public async Task<User?> Register(User user, string confirmPassword)
     {
+        // Kiểm tra xem email đã tồn tại chưa
+        if (await _context.Users.AnyAsync(u => u.Email == user.Email))
+        {
+            Console.WriteLine("Registration failed: Email already exists.");
+            return null;
+        }
+
+        // Kiểm tra xác nhận mật khẩu
+        if (user.PasswordHash != confirmPassword)
+        {
+            Console.WriteLine("Registration failed: Passwords do not match.");
+            return null;
+        }
+
+        // Gán RoleId dựa vào UserType
+        user.RoleId = user.UserType.ToLower() switch
+        {
+            "reader" => 1,
+            "staff" => 2,
+            "admin" => 3,
+            _ => throw new ArgumentException("Invalid User Type")
+        };
+
+        // Hash password trước khi lưu vào DB
         user.PasswordHash = await HashPassword(user.PasswordHash);
+        user.CreatedAt = DateTime.UtcNow;
+
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
+
+        Console.WriteLine($"User {user.FullName} registered successfully!");
         return user;
     }
+
 
     public async Task<bool> Update(User user)
     {

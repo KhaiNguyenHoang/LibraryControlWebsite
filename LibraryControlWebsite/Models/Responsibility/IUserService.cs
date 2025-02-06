@@ -2,8 +2,8 @@
 
 public interface IUserService
 {
-    Task<User> Login(int userId, string password);
-    Task<User> Register(User user);
+    Task<User?> Login(string email, string password);
+    Task<User?> Register(User user, string confirmPassword);
     Task<bool> Update(User user);
     Task<User> Delete(int id);
     Task<IEnumerable<User?>> GetUsers();
