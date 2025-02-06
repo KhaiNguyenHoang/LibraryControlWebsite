@@ -1,134 +1,155 @@
 using LibaryControlWebsite.Models.Responsibility;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace LibaryControlWebsite.Models.Service;
-
-public class UserService : IUserService
+namespace LibaryControlWebsite.Models.Service
 {
-    private readonly LibraryContext _context;
-
-    public UserService(LibraryContext context)
+    public class UserService : IUserService
     {
-        _context = context;
-    }
+        private readonly LibraryContext _context;
 
-    public async Task<User?> Login(string email, string password)
-    {
-        // Tìm người dùng theo email
-        var userToLogin = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-    
-        if (userToLogin == null)
+        public UserService(LibraryContext context)
         {
-            Console.WriteLine("Login failed: Email not found.");
-            return null;
+            _context = context;
         }
 
-        // Kiểm tra mật khẩu
-        if (!BCrypt.Net.BCrypt.Verify(password, userToLogin.PasswordHash))
+        /// <summary>
+        /// Xử lý đăng nhập
+        /// </summary>
+        public async Task<User?> Login(string email, string password)
         {
-            Console.WriteLine("Login failed: Incorrect password.");
-            return null;
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                throw new ArgumentNullException("Email hoặc mật khẩu không được để trống.");
+            }
+
+            email = email.ToLower(); // ✅ Chuyển email về chữ thường
+
+            var userToLogin = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == email);
+            if (userToLogin == null) throw new Exception("Tài khoản không tồn tại.");
+            if (!BCrypt.Net.BCrypt.Verify(password, userToLogin.PasswordHash)) throw new Exception("Mật khẩu không chính xác.");
+
+            return userToLogin;
         }
 
-        Console.WriteLine($"Login successful: {userToLogin.FullName}");
-        return userToLogin;
-    }
-
-
-    public async Task<User?> Register(User user, string confirmPassword)
-    {
-        // Kiểm tra xem email đã tồn tại chưa
-        if (await _context.Users.AnyAsync(u => u.Email == user.Email))
+        /// <summary>
+        /// Xử lý đăng ký tài khoản
+        /// </summary>
+        public async Task<User?> Register(User user, string confirmPassword)
         {
-            Console.WriteLine("Registration failed: Email already exists.");
-            return null;
+            user.Email = user.Email.ToLower(); // ✅ Chuyển email về chữ thường
+
+            if (await _context.Users.AnyAsync(u => u.Email == user.Email))
+                throw new Exception("Email đã được sử dụng.");
+
+            if (user.PasswordHash != confirmPassword)
+                throw new Exception("Mật khẩu xác nhận không khớp.");
+
+            string userType = user.UserType.ToLower();
+            if (userType != "reader" && userType != "staff" && userType != "admin")
+                throw new Exception("Loại tài khoản không hợp lệ.");
+
+            user.RoleId = userType switch
+            {
+                "reader" => 1,
+                "staff" => 2,
+                "admin" => 3,
+                _ => throw new ArgumentException("Loại tài khoản không hợp lệ.")
+            };
+
+            user.PasswordHash = await HashPassword(user.PasswordHash);
+            user.CreatedAt = DateTime.UtcNow;
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+            return user;
         }
 
-        // Kiểm tra xác nhận mật khẩu
-        if (user.PasswordHash != confirmPassword)
+        /// <summary>
+        /// Lấy danh sách tất cả người dùng
+        /// </summary>
+        public async Task<IEnumerable<User>> GetUsers()
         {
-            Console.WriteLine("Registration failed: Passwords do not match.");
-            return null;
+            return await _context.Users.ToListAsync();
         }
 
-        // Gán RoleId dựa vào UserType
-        user.RoleId = user.UserType.ToLower() switch
+        /// <summary>
+        /// Lấy thông tin người dùng theo ID
+        /// </summary>
+        public async Task<User?> GetUser(int? id)
         {
-            "reader" => 1,
-            "staff" => 2,
-            "admin" => 3,
-            _ => throw new ArgumentException("Invalid User Type")
-        };
+            if (id == null) return null;
+            return await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
+        }
 
-        // Hash password trước khi lưu vào DB
-        user.PasswordHash = await HashPassword(user.PasswordHash);
-        user.CreatedAt = DateTime.UtcNow;
-
-        _context.Users.Add(user);
-        await _context.SaveChangesAsync();
-
-        Console.WriteLine($"User {user.FullName} registered successfully!");
-        return user;
-    }
-
-
-    public async Task<bool> Update(User user)
-    {
-        var userToUpdate = GetUsers().Result.FirstOrDefault(u => u.UserId ==user.UserId);
-        if (userToUpdate != null)
+        /// <summary>
+        /// Lấy thông tin người dùng hiện tại
+        /// </summary>
+        public async Task<User?> GetCurrentUser(int userId)
         {
-            userToUpdate.FullName = user.FullName;
-            userToUpdate.Email = user.Email;
-            userToUpdate.Phone = user.Phone;
-            userToUpdate.Address = user.Address;
+            return await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+        }
+
+        /// <summary>
+        /// Kiểm tra email đã tồn tại chưa
+        /// </summary>
+        public async Task<bool> UserExists(string email)
+        {
+            return await _context.Users.AnyAsync(u => u.Email == email);
+        }
+
+        /// <summary>
+        /// Cập nhật thông tin người dùng
+        /// </summary>
+        public async Task<bool> Update(User user)
+        {
+            var userToUpdate = await _context.Users.FirstOrDefaultAsync(u => u.UserId == user.UserId);
+            if (userToUpdate == null) return false;
+
+            userToUpdate.FullName = user.FullName ?? userToUpdate.FullName;
+            userToUpdate.Phone = user.Phone ?? userToUpdate.Phone;
+            userToUpdate.Address = user.Address ?? userToUpdate.Address;
+
             await _context.SaveChangesAsync();
             return true;
         }
-        return false;
-    }
 
-    public async Task<User?> Delete(int id)
-    {
-        var user = await GetUser(id);
-        if (user != null)
+        /// <summary>
+        /// Xóa tài khoản
+        /// </summary>
+        public async Task<User?> Delete(int id)
         {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
+            if (user == null) return null;
+
+            if (user.UserType.ToLower() == "admin") throw new Exception("Không thể xóa tài khoản Admin.");
+
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
             return user;
         }
-        return null;
-    }
 
-    public async Task<IEnumerable<User?>> GetUsers()
-    {
-        return await _context.Users.ToListAsync();
-    }
-
-    public async Task<User?> GetUser(int? id)
-    {
-        return await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
-    }
-
-    public bool UserExists(string username)
-    {
-        var user = _context.Users.FirstOrDefault(u => u.Email == username);
-        return user != null;
-    }
-
-    public async Task<User?> ChangePassword(User user, string newPassword)
-    {
-        var userToUpdate = await _context.Users.FirstOrDefaultAsync(u => u.UserId == user.UserId);
-        if (userToUpdate != null)
+        /// <summary>
+        /// Đổi mật khẩu
+        /// </summary>
+        public async Task<User?> ChangePassword(int userId, string newPassword)
         {
+            var userToUpdate = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            if (userToUpdate == null) return null;
+
             userToUpdate.PasswordHash = await HashPassword(newPassword);
             await _context.SaveChangesAsync();
             return userToUpdate;
         }
-        return null;
-    }
 
-    public async Task<string> HashPassword(string password)
-    {
-        return await Task.FromResult(BCrypt.Net.BCrypt.HashPassword(password));
+        /// <summary>
+        /// Hash mật khẩu bằng BCrypt
+        /// </summary>
+        public async Task<string> HashPassword(string password)
+        {
+            return await Task.FromResult(BCrypt.Net.BCrypt.HashPassword(password));
+        }
     }
 }
