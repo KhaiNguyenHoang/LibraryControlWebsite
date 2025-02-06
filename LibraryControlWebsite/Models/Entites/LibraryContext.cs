@@ -36,7 +36,7 @@ public partial class LibraryContext : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
-    public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<User?> Users { get; set; }
 
     public virtual DbSet<Waitlist> Waitlists { get; set; }
 
