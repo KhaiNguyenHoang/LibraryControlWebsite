@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibaryControlWebsite", "LibaryControlWebsite\LibaryControlWebsite.csproj", "{F7C894A1-B036-4856-A538-38979151200E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryControlWebsite", "LibraryControlWebsite\LibraryControlWebsite.csproj", "{F7C894A1-B036-4856-A538-38979151200E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

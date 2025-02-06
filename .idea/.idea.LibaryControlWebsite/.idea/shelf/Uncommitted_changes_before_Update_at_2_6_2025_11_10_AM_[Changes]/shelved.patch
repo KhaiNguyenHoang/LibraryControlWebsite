@@ -1,0 +1,399 @@
+Index: LibraryControlWebsite/Views/Shared/_Layout.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"utf-8\"/>\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\r\n    <title>@ViewData[\"Title\"] - LibaryControlWebsite</title>\r\n    <link rel=\"stylesheet\" href=\"~/lib/bootstrap/dist/css/bootstrap.min.css\"/>\r\n    <link rel=\"stylesheet\" href=\"~/css/site.css\" asp-append-version=\"true\"/>\r\n    <link rel=\"stylesheet\" href=\"~/LibaryControlWebsite.styles.css\" asp-append-version=\"true\"/>\r\n</head>\r\n<body>\r\n<header>\r\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\r\n        <div class=\"container-fluid\">\r\n            <a class=\"navbar-brand\" asp-area=\"\" asp-controller=\"Home\" asp-action=\"Index\">LibaryControlWebsite</a>\r\n            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\".navbar-collapse\" aria-controls=\"navbarSupportedContent\"\r\n                    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n                <span class=\"navbar-toggler-icon\"></span>\r\n            </button>\r\n            <div class=\"navbar-collapse collapse d-sm-inline-flex justify-content-between\">\r\n                <ul class=\"navbar-nav flex-grow-1\">\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"Home\" asp-action=\"Index\">Home</a>\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"Home\" asp-action=\"Privacy\">Privacy</a>\r\n                    </li>\r\n                </ul>\r\n                <p class=\"nav navbar-text\">Hello, @User.Identity?.Name!</p>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n</header>\r\n<div class=\"container\">\r\n    <main role=\"main\" class=\"pb-3\">\r\n        @RenderBody()\r\n    </main>\r\n</div>\r\n\r\n<footer class=\"border-top footer text-muted\">\r\n    <div class=\"container\">\r\n        &copy; 2025 - LibaryControlWebsite - <a asp-area=\"\" asp-controller=\"Home\" asp-action=\"Privacy\">Privacy</a>\r\n    </div>\r\n</footer>\r\n<script src=\"~/lib/jquery/dist/jquery.min.js\"></script>\r\n<script src=\"~/lib/bootstrap/dist/js/bootstrap.bundle.min.js\"></script>\r\n<script src=\"~/js/site.js\" asp-append-version=\"true\"></script>\r\n@await RenderSectionAsync(\"Scripts\", required: false)\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LibraryControlWebsite/Views/Shared/_Layout.cshtml b/LibraryControlWebsite/Views/Shared/_Layout.cshtml
+--- a/LibraryControlWebsite/Views/Shared/_Layout.cshtml	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ b/LibraryControlWebsite/Views/Shared/_Layout.cshtml	(date 1738810201727)
+@@ -3,16 +3,16 @@
+ <head>
+     <meta charset="utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+-    <title>@ViewData["Title"] - LibaryControlWebsite</title>
++    <title>@ViewData["Title"] - LibraryControlWebsite</title>
+     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+-    <link rel="stylesheet" href="~/LibaryControlWebsite.styles.css" asp-append-version="true"/>
++    <link rel="stylesheet" href="~/LibraryControlWebsite.styles.css" asp-append-version="true"/>
+ </head>
+ <body>
+ <header>
+     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+         <div class="container-fluid">
+-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LibaryControlWebsite</a>
++            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LibraryControlWebsite</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                     aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+@@ -39,7 +39,7 @@
+ 
+ <footer class="border-top footer text-muted">
+     <div class="container">
+-        &copy; 2025 - LibaryControlWebsite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
++        &copy; 2025 - LibraryControlWebsite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+     </div>
+ </footer>
+ <script src="~/lib/jquery/dist/jquery.min.js"></script>
+Index: .idea/.idea.LibaryControlWebsite/.idea/git_toolbox_blame.xml
+===================================================================
+diff --git a/.idea/.idea.LibaryControlWebsite/.idea/git_toolbox_blame.xml b/.idea/.idea.LibaryControlWebsite/.idea/git_toolbox_blame.xml
+deleted file mode 100644
+--- a/.idea/.idea.LibaryControlWebsite/.idea/git_toolbox_blame.xml	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ /dev/null	(revision 557353bc43fe703b458e570d5aeef32932898518)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="GitToolBoxBlameSettings">
+-    <option name="version" value="2" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.idea.LibaryControlWebsite/.idea/vcs.xml
+===================================================================
+diff --git a/.idea/.idea.LibaryControlWebsite/.idea/vcs.xml b/.idea/.idea.LibaryControlWebsite/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/.idea.LibaryControlWebsite/.idea/vcs.xml	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ /dev/null	(revision 557353bc43fe703b458e570d5aeef32932898518)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.idea.LibaryControlWebsite/.idea/encodings.xml
+===================================================================
+diff --git a/.idea/.idea.LibaryControlWebsite/.idea/encodings.xml b/.idea/.idea.LibaryControlWebsite/.idea/encodings.xml
+deleted file mode 100644
+--- a/.idea/.idea.LibaryControlWebsite/.idea/encodings.xml	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ /dev/null	(revision 557353bc43fe703b458e570d5aeef32932898518)
+@@ -1,4 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise" />
+-</project>
+\ No newline at end of file
+Index: .idea/.idea.LibaryControlWebsite/.idea/indexLayout.xml
+===================================================================
+diff --git a/.idea/.idea.LibaryControlWebsite/.idea/indexLayout.xml b/.idea/.idea.LibaryControlWebsite/.idea/indexLayout.xml
+deleted file mode 100644
+--- a/.idea/.idea.LibaryControlWebsite/.idea/indexLayout.xml	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ /dev/null	(revision 557353bc43fe703b458e570d5aeef32932898518)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="UserContentModel">
+-    <attachedFolders />
+-    <explicitIncludes />
+-    <explicitExcludes />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.idea.LibaryControlWebsite/.idea/.gitignore
+===================================================================
+diff --git a/.idea/.idea.LibaryControlWebsite/.idea/.gitignore b/.idea/.idea.LibaryControlWebsite/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.idea.LibaryControlWebsite/.idea/.gitignore	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ /dev/null	(revision 557353bc43fe703b458e570d5aeef32932898518)
+@@ -1,13 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Rider ignored files
+-/modules.xml
+-/contentModel.xml
+-/.idea.LibaryControlWebsite.iml
+-/projectSettingsUpdater.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: .idea/.idea.LibaryControlWebsite/.idea/aws.xml
+===================================================================
+diff --git a/.idea/.idea.LibaryControlWebsite/.idea/aws.xml b/.idea/.idea.LibaryControlWebsite/.idea/aws.xml
+deleted file mode 100644
+--- a/.idea/.idea.LibaryControlWebsite/.idea/aws.xml	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ /dev/null	(revision 557353bc43fe703b458e570d5aeef32932898518)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="accountSettings">
+-    <option name="activeRegion" value="us-east-1" />
+-    <option name="recentlyUsedRegions">
+-      <list>
+-        <option value="us-east-1" />
+-      </list>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.idea.LibaryControlWebsite/.idea/discord.xml
+===================================================================
+diff --git a/.idea/.idea.LibaryControlWebsite/.idea/discord.xml b/.idea/.idea.LibaryControlWebsite/.idea/discord.xml
+deleted file mode 100644
+--- a/.idea/.idea.LibaryControlWebsite/.idea/discord.xml	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ /dev/null	(revision 557353bc43fe703b458e570d5aeef32932898518)
+@@ -1,14 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="DiscordProjectSettings">
+-    <option name="show" value="ASK" />
+-    <option name="description" value="" />
+-    <option name="applicationTheme" value="default" />
+-    <option name="iconsTheme" value="default" />
+-    <option name="button1Title" value="" />
+-    <option name="button1Url" value="" />
+-    <option name="button2Title" value="" />
+-    <option name="button2Url" value="" />
+-    <option name="customApplicationId" value="" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: LibraryControlWebsite.sln
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nMicrosoft Visual Studio Solution File, Format Version 12.00\r\nProject(\"{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\") = \"LibaryControlWebsite\", \"LibaryControlWebsite\\LibaryControlWebsite.csproj\", \"{F7C894A1-B036-4856-A538-38979151200E}\"\r\nEndProject\r\nGlobal\r\n\tGlobalSection(SolutionConfigurationPlatforms) = preSolution\r\n\t\tDebug|Any CPU = Debug|Any CPU\r\n\t\tRelease|Any CPU = Release|Any CPU\r\n\tEndGlobalSection\r\n\tGlobalSection(ProjectConfigurationPlatforms) = postSolution\r\n\t\t{F7C894A1-B036-4856-A538-38979151200E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU\r\n\t\t{F7C894A1-B036-4856-A538-38979151200E}.Debug|Any CPU.Build.0 = Debug|Any CPU\r\n\t\t{F7C894A1-B036-4856-A538-38979151200E}.Release|Any CPU.ActiveCfg = Release|Any CPU\r\n\t\t{F7C894A1-B036-4856-A538-38979151200E}.Release|Any CPU.Build.0 = Release|Any CPU\r\n\tEndGlobalSection\r\nEndGlobal\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LibraryControlWebsite.sln b/LibraryControlWebsite.sln
+--- a/LibraryControlWebsite.sln	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ b/LibraryControlWebsite.sln	(date 1738810198668)
+@@ -1,6 +1,6 @@
+ 
+ Microsoft Visual Studio Solution File, Format Version 12.00
+-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibaryControlWebsite", "LibaryControlWebsite\LibaryControlWebsite.csproj", "{F7C894A1-B036-4856-A538-38979151200E}"
++Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryControlWebsite", "LibraryControlWebsite\LibraryControlWebsite.csproj", "{F7C894A1-B036-4856-A538-38979151200E}"
+ EndProject
+ Global
+ 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+Index: .idea/.idea.LibaryControlWebsite/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoGeneratedRunConfigurationManager\">\r\n    <projectFile profileName=\"IIS Express\">LibaryControlWebsite/LibaryControlWebsite.csproj</projectFile>\r\n    <projectFile profileName=\"http\">LibaryControlWebsite/LibaryControlWebsite.csproj</projectFile>\r\n    <projectFile profileName=\"https\">LibaryControlWebsite/LibaryControlWebsite.csproj</projectFile>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e2088435-7d11-4cb5-a992-86ff0c4bc8c5\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite.sln\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Controllers/HomeController.cs\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/LibraryControlWebsite.csproj\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Models/ErrorViewModel.cs\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Program.cs\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Properties/launchSettings.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Views/Home/Index.cshtml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Views/Home/Privacy.cshtml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/Error.cshtml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/_Layout.cshtml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/_Layout.cshtml.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/_ValidationScriptsPartial.cshtml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Views/_ViewImports.cshtml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/Views/_ViewStart.cshtml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/appsettings.Development.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/appsettings.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/css/site.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/favicon.ico\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/js/site.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/LICENSE\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/LICENSE.md\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/dist/additional-methods.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/dist/additional-methods.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/dist/jquery.validate.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery/LICENSE.txt\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery/dist/jquery.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery/dist/jquery.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery/dist/jquery.min.map\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/global.json\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/LibraryControlWebsite/Controllers/HomeController.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2sdGjSZ07By1zyEUbHRtCim3Eh4\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\".NET Launch Settings Profile.LibaryControlWebsite: IIS Express\">\r\n    <configuration name=\"LibaryControlWebsite: IIS Express\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\r\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/LibraryControlWebsite/LibraryControlWebsite.csproj\" />\r\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net8.0\" />\r\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"IIS Express\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <option name=\"USE_MONO\" value=\"0\" />\r\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\r\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\r\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\r\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\r\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\r\n      <method v=\"2\">\r\n        <option name=\"Build\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LibaryControlWebsite: http\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\r\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/LibraryControlWebsite/LibraryControlWebsite.csproj\" />\r\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net8.0\" />\r\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"http\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <option name=\"USE_MONO\" value=\"0\" />\r\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\r\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\r\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\r\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\r\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\r\n      <method v=\"2\">\r\n        <option name=\"Build\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LibaryControlWebsite: https\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\r\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/LibraryControlWebsite/LibraryControlWebsite.csproj\" />\r\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net8.0\" />\r\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"https\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <option name=\"USE_MONO\" value=\"0\" />\r\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\r\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\r\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\r\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\r\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\r\n      <method v=\"2\">\r\n        <option name=\"Build\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e2088435-7d11-4cb5-a992-86ff0c4bc8c5\" name=\"Changes\" comment=\"\" />\r\n      <created>1738778172401</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1738778172401</updated>\r\n      <workItem from=\"1738778173530\" duration=\"2272000\" />\r\n      <workItem from=\"1738810068131\" duration=\"2020000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnityProjectConfiguration\" hasMinimizedUI=\"false\" />\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"CLEAR_INITIAL_COMMIT_MESSAGE\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.LibaryControlWebsite/.idea/workspace.xml b/.idea/.idea.LibaryControlWebsite/.idea/workspace.xml
+--- a/.idea/.idea.LibaryControlWebsite/.idea/workspace.xml	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ b/.idea/.idea.LibaryControlWebsite/.idea/workspace.xml	(date 1738815021666)
+@@ -10,84 +10,21 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="e2088435-7d11-4cb5-a992-86ff0c4bc8c5" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite.sln" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Controllers/HomeController.cs" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/LibraryControlWebsite.csproj" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Models/ErrorViewModel.cs" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Program.cs" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Properties/launchSettings.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/Home/Index.cshtml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/Home/Privacy.cshtml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/Error.cshtml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/_Layout.cshtml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/_Layout.cshtml.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/_ViewImports.cshtml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/_ViewStart.cshtml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/appsettings.Development.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/appsettings.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/css/site.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/favicon.ico" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/js/site.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/LICENSE" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/LICENSE.md" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/dist/additional-methods.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery/LICENSE.txt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery/dist/jquery.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/wwwroot/lib/jquery/dist/jquery.min.map" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Models/Responsibility/IAuthorService.cs" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Models/Responsibility/IBookService.cs" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Models/Responsibility/IBookcopyService.cs" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/LibraryControlWebsite/Models/Responsibility/IBookreviewService.cs" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/aws.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/discord.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/encodings.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/git_toolbox_blame.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/indexLayout.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/vcs.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibaryControlWebsite/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/LibraryControlWebsite.sln" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryControlWebsite.sln" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/LibraryControlWebsite/LibraryControlWebsite.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryControlWebsite/LibraryControlWebsite.csproj" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryControlWebsite/Views/Shared/_Layout.cshtml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -97,6 +34,18 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;KhaiNguyenHoang&quot;
++  }
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/KhaiNguyenHoang/LibraryControlWebsite.git&quot;,
++    &quot;accountId&quot;: &quot;b9f74228-0295-4c87-ab24-526687e89ef9&quot;
++  }
++}</component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/LibraryControlWebsite/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+   </component>
+@@ -181,7 +130,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1738778172401</updated>
+       <workItem from="1738778173530" duration="2272000" />
+-      <workItem from="1738810068131" duration="2020000" />
++      <workItem from="1738810068131" duration="4322000" />
+     </task>
+     <servers />
+   </component>
+Index: LibraryControlWebsite/LibraryControlWebsite.csproj
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><Project Sdk=\"Microsoft.NET.Sdk.Web\">\r\n\r\n    <PropertyGroup>\r\n        <TargetFramework>net8.0</TargetFramework>\r\n        <Nullable>enable</Nullable>\r\n        <ImplicitUsings>enable</ImplicitUsings>\r\n        <RootNamespace>LibaryControlWebsite</RootNamespace>\r\n    </PropertyGroup>\r\n\r\n    <ItemGroup>\r\n        <PackageReference Include=\"Microsoft.AspNetCore.Authentication.Negotiate\" Version=\"8.0.12\"/>\r\n        <PackageReference Include=\"Microsoft.EntityFrameworkCore\" Version=\"9.0.1\" />\r\n        <PackageReference Include=\"Microsoft.EntityFrameworkCore.Design\" Version=\"9.0.1\">\r\n          <PrivateAssets>all</PrivateAssets>\r\n          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>\r\n        </PackageReference>\r\n        <PackageReference Include=\"Microsoft.EntityFrameworkCore.Proxies\" Version=\"9.0.1\" />\r\n        <PackageReference Include=\"Microsoft.EntityFrameworkCore.SqlServer\" Version=\"9.0.1\" />\r\n        <PackageReference Include=\"Microsoft.EntityFrameworkCore.Tools\" Version=\"9.0.1\">\r\n          <PrivateAssets>all</PrivateAssets>\r\n          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>\r\n        </PackageReference>\r\n        <PackageReference Include=\"Npgsql.EntityFrameworkCore.PostgreSQL\" Version=\"9.0.3\" />\r\n        <PackageReference Include=\"Pomelo.EntityFrameworkCore.MySql\" Version=\"9.0.0-preview.2.efcore.9.0.0\" />\r\n    </ItemGroup>\r\n\r\n    <ItemGroup>\r\n      <Folder Include=\"Models\\Entites\\\" />\r\n      <Folder Include=\"Models\\Responsibility\\\" />\r\n      <Folder Include=\"Models\\Service\\\" />\r\n    </ItemGroup>\r\n\r\n</Project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LibraryControlWebsite/LibraryControlWebsite.csproj b/LibraryControlWebsite/LibraryControlWebsite.csproj
+--- a/LibraryControlWebsite/LibraryControlWebsite.csproj	(revision 557353bc43fe703b458e570d5aeef32932898518)
++++ b/LibraryControlWebsite/LibraryControlWebsite.csproj	(date 1738812465145)
+@@ -25,8 +25,6 @@
+     </ItemGroup>
+ 
+     <ItemGroup>
+-      <Folder Include="Models\Entites\" />
+-      <Folder Include="Models\Responsibility\" />
+       <Folder Include="Models\Service\" />
+     </ItemGroup>
+ 
+Index: LibraryControlWebsite/Models/Responsibility/IBookService.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LibraryControlWebsite/Models/Responsibility/IBookService.cs b/LibraryControlWebsite/Models/Responsibility/IBookService.cs
+new file mode 100644
+--- /dev/null	(date 1738813929033)
++++ b/LibraryControlWebsite/Models/Responsibility/IBookService.cs	(date 1738813929033)
+@@ -0,0 +1,6 @@
++namespace LibaryControlWebsite.Models.Responsibility;
++
++public interface IBookService
++{
++    
++}
+\ No newline at end of file
+Index: LibraryControlWebsite/Models/Responsibility/IAuthorService.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LibraryControlWebsite/Models/Responsibility/IAuthorService.cs b/LibraryControlWebsite/Models/Responsibility/IAuthorService.cs
+new file mode 100644
+--- /dev/null	(date 1738814023306)
++++ b/LibraryControlWebsite/Models/Responsibility/IAuthorService.cs	(date 1738814023306)
+@@ -0,0 +1,6 @@
++namespace LibaryControlWebsite.Models.Responsibility;
++
++public interface IAuthorService
++{
++    
++}
+\ No newline at end of file
+Index: LibraryControlWebsite/Models/Responsibility/IBookreviewService.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LibraryControlWebsite/Models/Responsibility/IBookreviewService.cs b/LibraryControlWebsite/Models/Responsibility/IBookreviewService.cs
+new file mode 100644
+--- /dev/null	(date 1738814002031)
++++ b/LibraryControlWebsite/Models/Responsibility/IBookreviewService.cs	(date 1738814002031)
+@@ -0,0 +1,6 @@
++namespace LibaryControlWebsite.Models.Responsibility;
++
++public class IBookreviewService
++{
++    
++}
+\ No newline at end of file
+Index: LibraryControlWebsite/Models/Responsibility/IBookcopyService.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LibraryControlWebsite/Models/Responsibility/IBookcopyService.cs b/LibraryControlWebsite/Models/Responsibility/IBookcopyService.cs
+new file mode 100644
+--- /dev/null	(date 1738813944874)
++++ b/LibraryControlWebsite/Models/Responsibility/IBookcopyService.cs	(date 1738813944874)
+@@ -0,0 +1,6 @@
++namespace LibaryControlWebsite.Models.Responsibility;
++
++public interface IBookcopyService
++{
++    
++}
+\ No newline at end of file
