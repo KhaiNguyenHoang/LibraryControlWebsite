@@ -29,4 +29,22 @@
       <Folder Include="Models\Service\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Auth\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Auth\Home\Privacy.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Home\Index.cshtml" />
+      <AdditionalFiles Include="Views\Home\Privacy.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="wwwroot\lib\tailwindcss\dist\flatten-color-palette.d.mts" />
+      <Content Remove="wwwroot\lib\tailwindcss\dist\default-theme.js" />
+      <Content Remove="wwwroot\lib\tailwindcss\dist\default-theme.d.ts" />
+    </ItemGroup>
+
 </Project>
