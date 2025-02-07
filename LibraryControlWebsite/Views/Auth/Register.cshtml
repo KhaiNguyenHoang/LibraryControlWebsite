@@ -39,59 +39,6 @@
             color: #333;
             font-weight: bold;
         }
-
-        .form-control {
-            border-radius: 10px;
-            padding: 12px;
-            font-size: 16px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            border: none;
-            border-radius: 10px;
-            padding: 12px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(to right, #4a0ea3, #1e5ae1);
-            transform: scale(1.05);
-        }
-
-        .form-label {
-            font-weight: bold;
-            color: #555;
-        }
-
-        .login-link a {
-            text-decoration: none;
-            color: #6a11cb;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .login-link a:hover {
-            color: #4a0ea3;
-        }
-
-        .icon-input {
-            position: relative;
-        }
-
-        .icon-input i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #888;
-        }
-
-        .icon-input input {
-            padding-left: 40px;
-        }
     </style>
 </head>
 <body>
@@ -122,14 +69,7 @@
                 <input type="text" name="Phone" class="form-control" id="Phone" placeholder="Nhập số điện thoại" required />
             </div>
 
-            <div class="mb-3 icon-input">
-                <i class="fas fa-map-marker-alt"></i>
-                <label class="form-label" for="Address">Địa chỉ</label>
-                <input type="text" name="Address" class="form-control" id="Address" placeholder="Nhập địa chỉ" />
-            </div>
-
-            <div class="mb-3 icon-input">
-                <i class="fas fa-users"></i>
+            <div class="mb-3">
                 <label class="form-label" for="UserType">Loại tài khoản</label>
                 <select name="UserType" id="UserType" class="form-control" required>
                     <option value="Reader">Người đọc</option>
@@ -137,6 +77,30 @@
                     <option value="Admin">Quản trị viên</option>
                 </select>
             </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="Country">Quốc gia</label>
+                <select name="Country" id="Country" class="form-control" required>
+                    <option value="">Chọn quốc gia</option>
+                    <option value="Vietnam">Việt Nam</option>
+                    <option value="USA">Hoa Kỳ</option>
+                    <option value="UK">Vương Quốc Anh</option>
+                    <option value="France">Pháp</option>
+                    <option value="Germany">Đức</option>
+                    <option value="Japan">Nhật Bản</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Úc</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="City">Tỉnh/Thành phố</label>
+                <select name="City" id="City" class="form-control" required>
+                    <option value="">Chọn tỉnh/thành phố</option>
+                </select>
+            </div>
+
+            <input type="hidden" name="Address" id="Address" />
 
             <div class="mb-3 icon-input">
                 <i class="fas fa-lock"></i>
@@ -150,12 +114,35 @@
                 <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu" required />
             </div>
 
+            <script>
+                const cityOptions = {
+                    "Vietnam": ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Hải Phòng", "Cần Thơ", "Nha Trang", "Huế", "Vũng Tàu", "Đà Lạt", "Buôn Ma Thuột"],
+                    "USA": ["New York", "Los Angeles", "Chicago", "Houston", "San Francisco", "Miami", "Dallas", "Seattle", "Boston", "Las Vegas"],
+                    "UK": ["London", "Manchester", "Birmingham", "Liverpool", "Edinburgh", "Glasgow", "Bristol", "Leeds", "Nottingham", "Sheffield"],
+                    "France": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille"],
+                    "Germany": ["Berlin", "Munich", "Hamburg", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dresden", "Leipzig", "Nuremberg"],
+                    "Japan": ["Tokyo", "Osaka", "Kyoto", "Yokohama", "Nagoya", "Sapporo", "Fukuoka", "Kobe", "Hiroshima", "Sendai"],
+                    "Canada": ["Toronto", "Vancouver", "Montreal", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Halifax", "Victoria"],
+                    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin", "Gold Coast", "Newcastle"]
+                };
+                document.getElementById("Country").addEventListener("change", function () {
+                    let country = this.value;
+                    let citySelect = document.getElementById("City");
+                    citySelect.innerHTML = '<option value="">Chọn tỉnh/thành phố</option>';
+                    
+                    if (country in cityOptions) {
+                        cityOptions[country].forEach(city => {
+                            let option = document.createElement("option");
+                            option.value = city;
+                            option.textContent = city;
+                            citySelect.appendChild(option);
+                        });
+                    }
+                });
+            </script>
+
             <button type="submit" class="btn btn-primary w-100">Đăng Ký</button>
         </form>
-
-        <div class="text-center mt-3 login-link">
-            <a href="@Url.Action("Login", "Auth")">Đã có tài khoản? Đăng nhập ngay</a>
-        </div>
     </div>
 </body>
 </html>
