@@ -72,6 +72,12 @@ namespace LibaryControlWebsite.Controllers
                 ViewBag.Error = "Email đã tồn tại.";
                 return View(user);
             }
+            
+            if (await _userService.UserPhoneExists(user.Phone))
+            {
+                ViewBag.Error = "Số điện thoại đã được sử dụng.";
+                return View(user);
+            }
 
             if (user.PasswordHash != confirmPassword)
             {

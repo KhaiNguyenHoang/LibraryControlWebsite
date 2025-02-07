@@ -151,5 +151,10 @@ namespace LibaryControlWebsite.Models.Service
         {
             return await Task.FromResult(BCrypt.Net.BCrypt.HashPassword(password));
         }
+        
+        public async Task<bool> UserPhoneExists(string phone)
+        {
+            return await _context.Users.AnyAsync(u => u.Phone == phone);
+        }
     }
 }

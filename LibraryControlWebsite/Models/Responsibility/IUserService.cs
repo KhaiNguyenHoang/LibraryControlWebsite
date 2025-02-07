@@ -14,4 +14,5 @@ public interface IUserService
     Task<bool> UserExists(string email);
     Task<User?> ChangePassword(int userId, string newPassword);
     Task<string> HashPassword(string password);
+    Task<bool> UserPhoneExists(string phone);
 }
