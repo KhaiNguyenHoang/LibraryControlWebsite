@@ -10,6 +10,10 @@ namespace LibaryControlWebsite.Controllers
     [Authorize]
     public class UserController : Controller
     {
+        public IActionResult Demo()
+        {
+            return View();
+        }
         private readonly IUserService _userService;
 
         public UserController(IUserService userService)
