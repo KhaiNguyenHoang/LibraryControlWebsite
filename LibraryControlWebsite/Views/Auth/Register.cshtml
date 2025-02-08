@@ -139,6 +139,13 @@
                         });
                     }
                 });
+                    document.getElementById("City").addEventListener("change", function () {
+                    let country = document.getElementById("Country").value;
+                    let city = this.value;
+                    if (country && city) {
+                    document.getElementById("Address").value = city + ", " + country;
+                }
+                });
             </script>
 
             <button type="submit" class="btn btn-primary w-100">Đăng Ký</button>
