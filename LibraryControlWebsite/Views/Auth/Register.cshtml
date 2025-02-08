@@ -116,20 +116,66 @@
 
             <script>
                 const cityOptions = {
-                    "Vietnam": ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Hải Phòng", "Cần Thơ", "Nha Trang", "Huế", "Vũng Tàu", "Đà Lạt", "Buôn Ma Thuột"],
-                    "USA": ["New York", "Los Angeles", "Chicago", "Houston", "San Francisco", "Miami", "Dallas", "Seattle", "Boston", "Las Vegas"],
-                    "UK": ["London", "Manchester", "Birmingham", "Liverpool", "Edinburgh", "Glasgow", "Bristol", "Leeds", "Nottingham", "Sheffield"],
-                    "France": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille"],
-                    "Germany": ["Berlin", "Munich", "Hamburg", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dresden", "Leipzig", "Nuremberg"],
-                    "Japan": ["Tokyo", "Osaka", "Kyoto", "Yokohama", "Nagoya", "Sapporo", "Fukuoka", "Kobe", "Hiroshima", "Sendai"],
-                    "Canada": ["Toronto", "Vancouver", "Montreal", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Halifax", "Victoria"],
-                    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin", "Gold Coast", "Newcastle"]
+                    "Vietnam": [
+                        "Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Hải Phòng", "Cần Thơ", "Nha Trang", "Huế", "Vũng Tàu", "Đà Lạt", "Buôn Ma Thuột",
+                        "Quy Nhơn", "Bắc Giang", "Bắc Ninh", "Cao Bằng", "Hải Dương", "Hà Nam", "Hòa Bình", "Hưng Yên", "Lào Cai", "Nam Định",
+                        "Nghệ An", "Phú Thọ", "Quảng Bình", "Quảng Nam", "Sóc Trăng", "Tây Ninh", "Thừa Thiên Huế", "Thanh Hóa", "Yên Bái"
+                    ],
+                    "USA": [
+                        "New York", "Los Angeles", "Chicago", "Houston", "San Francisco", "Miami", "Dallas", "Seattle", "Boston", "Las Vegas",
+                        "Washington D.C.", "Atlanta", "Denver", "Phoenix", "Philadelphia", "San Diego", "Austin", "Orlando", "Detroit", "Portland"
+                    ],
+                    "UK": [
+                        "London", "Manchester", "Birmingham", "Liverpool", "Edinburgh", "Glasgow", "Bristol", "Leeds", "Nottingham", "Sheffield",
+                        "Cambridge", "Oxford", "Cardiff", "Belfast", "Newcastle", "Southampton", "Leicester", "Aberdeen", "Brighton", "Coventry"
+                    ],
+                    "France": [
+                        "Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille",
+                        "Cannes", "Rennes", "Reims", "Saint-Étienne", "Le Havre", "Toulon", "Angers", "Grenoble", "Dijon", "Nîmes"
+                    ],
+                    "Germany": [
+                        "Berlin", "Munich", "Hamburg", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dresden", "Leipzig", "Nuremberg",
+                        "Hannover", "Bremen", "Dortmund", "Essen", "Mannheim", "Karlsruhe", "Augsburg", "Wiesbaden", "Kiel", "Freiburg"
+                    ],
+                    "Japan": [
+                        "Tokyo", "Osaka", "Kyoto", "Yokohama", "Nagoya", "Sapporo", "Fukuoka", "Kobe", "Hiroshima", "Sendai",
+                        "Chiba", "Niigata", "Shizuoka", "Okayama", "Nagasaki", "Kagoshima", "Kanazawa", "Matsuyama", "Okinawa", "Gifu"
+                    ],
+                    "China": [
+                        "Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Chengdu", "Chongqing", "Tianjin", "Wuhan", "Xi'an", "Hangzhou",
+                        "Nanjing", "Suzhou", "Qingdao", "Harbin", "Shenyang", "Zhengzhou", "Jinan", "Dalian", "Changsha", "Kunming"
+                    ],
+                    "India": [
+                        "Delhi", "Mumbai", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Surat",
+                        "Lucknow", "Kanpur", "Nagpur", "Indore", "Bhopal", "Ludhiana", "Patna", "Vadodara", "Visakhapatnam", "Agra"
+                    ],
+                    "Russia": [
+                        "Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Kazan", "Nizhny Novgorod", "Chelyabinsk", "Samara",
+                        "Omsk", "Rostov-on-Don", "Ufa", "Krasnoyarsk", "Voronezh", "Perm", "Volgograd", "Krasnodar", "Saratov", "Tyumen", "Tolyatti"
+                    ],
+                    "Brazil": [
+                        "São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Fortaleza", "Belo Horizonte", "Curitiba", "Manaus",
+                        "Recife", "Porto Alegre", "Belém", "Goiânia", "Guarulhos", "Campinas", "São Luís", "São Gonçalo", "Maceió", "Duque de Caxias", "Natal"
+                    ],
+                    "Australia": [
+                        "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin", "Gold Coast", "Newcastle",
+                        "Wollongong", "Geelong", "Townsville", "Cairns", "Toowoomba", "Ballarat", "Bendigo", "Albury", "Launceston", "Mackay"
+                    ],
+                    "South Korea": [
+                        "Seoul", "Busan", "Incheon", "Daegu", "Daejeon", "Gwangju", "Suwon", "Ulsan", "Goyang", "Changwon",
+                        "Seongnam", "Cheongju", "Jeonju", "Ansan", "Cheonan", "Jeju", "Gimhae", "Pohang", "Gunsan", "Yangsan"
+                    ],
+                    "Mexico": [
+                        "Mexico City", "Guadalajara", "Monterrey", "Puebla", "Toluca", "Tijuana", "León", "Juárez", "Zapopan", "Mérida",
+                        "Chihuahua", "San Luis Potosí", "Aguascalientes", "Morelia", "Saltillo", "Hermosillo", "Culiacán", "Veracruz", "Cancún", "Villahermosa"
+                    ]
                 };
+
                 document.getElementById("Country").addEventListener("change", function () {
                     let country = this.value;
                     let citySelect = document.getElementById("City");
                     citySelect.innerHTML = '<option value="">Chọn tỉnh/thành phố</option>';
-                    
+
                     if (country in cityOptions) {
                         cityOptions[country].forEach(city => {
                             let option = document.createElement("option");
@@ -139,15 +185,15 @@
                         });
                     }
                 });
-                    document.getElementById("City").addEventListener("change", function () {
+
+                document.getElementById("City").addEventListener("change", function () {
                     let country = document.getElementById("Country").value;
                     let city = this.value;
                     if (country && city) {
-                    document.getElementById("Address").value = city + ", " + country;
-                }
+                        document.getElementById("Address").value = city + ", " + country;
+                    }
                 });
             </script>
-
             <button type="submit" class="btn btn-primary w-100">Đăng Ký</button>
         </form>
     </div>
